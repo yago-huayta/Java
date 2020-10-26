@@ -21,13 +21,16 @@ public class PruebasMain {
             helloWorld++;
             System.out.println("helloWorld");
         }
-         */
+
+
         bucleSumativo(5);
         sumando(3);
         sumarPares(5, false);
+        */
 
+        int[] edades = new int[]{15, 12 ,10};
     }
-
+    /*
     private static void bucleSumativo(int n) {
 
         int contenedor = 0;
@@ -99,7 +102,12 @@ public class PruebasMain {
             System.out.println(contenedor);
         }
 
-         */
+
+    }
+    */
+
+    public static void promedioEdades(int[] edades){
+         int contenedor = 0;
     }
 
 }
