@@ -47,13 +47,15 @@ public class ArrayExamples {
     public static void main(String... args) {
 
         String[] alumnos = new String[]{"Juan", "Carlos", "Pepe", "Carlos", "Luis"};
-        int[] notas = new int[]{};
+        int[] notas = new int[]{12, 12 , 12 ,12};
         int [] nums = new int []{1,3,2,2,0,3};
         int val = 4;
 
         listaAlumnos(alumnos, notas);
 
-        promedioGeneral(notas);
+        //promedioGeneral(notas);
+
+        promediosGenerales(notas);
 
         sumarValor(nums, val);
 
@@ -82,6 +84,64 @@ public class ArrayExamples {
             }
 
             System.out.println("La nota del alumno: " + nombreAlumno + " " + "es:" + notaAlumno);
+        }
+
+    }
+    public static void promediosGenerales(int[] notas){
+
+        int numeroNotas = notas.length;
+        int numerodeAprovados = 0;
+        int numerodeDesaprovados = 0;
+        int contenedorGeneral =0;
+        int contenedorAprovados =0;
+        int contenedorDesaprovados =0;
+        int todasNotas = 0;
+
+        if(numeroNotas == 0){
+
+            System.out.println("No hay ninguna nota ingresada");
+
+        }else{
+
+            for(int i = 0; i < numeroNotas; i++){
+
+                int iteracionNotas = notas[i];
+
+                contenedorGeneral = iteracionNotas + contenedorGeneral;
+
+                boolean estaAprovado;
+
+                if(iteracionNotas >= 13){
+
+                    estaAprovado = true;
+
+                }else{
+
+                    estaAprovado = false;
+
+                }
+
+                if( estaAprovado == true){
+
+                    numerodeAprovados++;
+
+                    contenedorAprovados = iteracionNotas + contenedorAprovados;
+
+                }else{
+                    numerodeDesaprovados++;
+
+                    contenedorDesaprovados = iteracionNotas + contenedorDesaprovados;
+                }
+            }
+            
+            int promedioTodos = contenedorGeneral/numeroNotas;
+            int promedioAprovados = contenedorAprovados/numerodeAprovados;
+            int promedioDesaprovados = contenedorDesaprovados/numerodeDesaprovados;
+
+            System.out.println("El promedio de todas las notas del salon del noveno es: " + promedioTodos);
+            System.out.println("El promedio de todos las notas de los aprovados del noveno es: " + promedioAprovados);
+            System.out.println("El promedio de todas las notas de los desaprovados del noveno es: " + promedioDesaprovados);
+
         }
 
     }
@@ -162,23 +222,7 @@ public class ArrayExamples {
         int valor11 = 0;
         int contador = 0;
         int total = val;
-/*
-        for(int i = 0; i < nums.length; i++){
 
-            valor22 = i+1;
-
-            valor1 = nums[i];
-            valor2 = nums[valor22];
-
-            if(valor1 + valor2 == total){
-
-                contador++;
-
-            }
-         }
-
-
- */
         for(int i = 1; i < nums.length; i++){
 
             valor11 = i-1;
