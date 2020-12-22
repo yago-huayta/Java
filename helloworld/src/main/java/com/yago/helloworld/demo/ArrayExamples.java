@@ -51,15 +51,19 @@ public class ArrayExamples {
         int [] nums = new int []{1,3,2,2,0,3};
         int val = 4;
 
-        listaAlumnos(alumnos, notas);
+        int [] dineroGastado = new int[]{50, 14 ,13 ,20, 50, 12};
+
+        //listaAlumnos(alumnos, notas);
 
         //promedioGeneral(notas);
 
         promediosGenerales(notas);
 
-        sumarValor(nums, val);
+        //sumarValor(nums, val);
 
-        interfaces();
+        //interfaces();
+
+        oferta25(dineroGastado);
 
     }
 
@@ -133,19 +137,33 @@ public class ArrayExamples {
                     contenedorDesaprovados = iteracionNotas + contenedorDesaprovados;
                 }
             }
-            
+
+
+
+            if(numerodeDesaprovados == 0){
+                System.out.println("Noy hay desaprovados");
+            }else{
+                int promedioDesaprovados = contenedorDesaprovados/numerodeDesaprovados;
+                System.out.println("El promedio de todas las notas de los desaprovados del noveno es: " + promedioDesaprovados);
+            }
+
+            if (numerodeAprovados == 0){
+                System.out.println("No hay aprovados");
+            }else{
+                int promedioAprovados = contenedorAprovados/numerodeAprovados;
+                System.out.println("El promedio de todos las notas de los aprovados del noveno es: " + promedioAprovados);
+            }
+
+
             int promedioTodos = contenedorGeneral/numeroNotas;
-            int promedioAprovados = contenedorAprovados/numerodeAprovados;
-            int promedioDesaprovados = contenedorDesaprovados/numerodeDesaprovados;
 
             System.out.println("El promedio de todas las notas del salon del noveno es: " + promedioTodos);
-            System.out.println("El promedio de todos las notas de los aprovados del noveno es: " + promedioAprovados);
-            System.out.println("El promedio de todas las notas de los desaprovados del noveno es: " + promedioDesaprovados);
 
         }
 
     }
 
+    /*
     public static void promedioGeneral(int[] notas) {
 
         int notasGeneral = 0;
@@ -214,6 +232,8 @@ public class ArrayExamples {
 
         }
     }
+    
+     */
 
     public static void sumarValor(int[] nums, int val){
 
@@ -253,6 +273,41 @@ public class ArrayExamples {
         }
 
     }
+
+    public static void oferta25(int[] dineroGastado ){
+
+        // Un programa que cuente el dinero que se gasto en productos y si gasto mas de 120 soles entonces se dara una oferta del 20%.
+
+        int dineroAcumulado = 0;
+
+        for(int i = 0; i < dineroGastado.length; i++){
+
+            int iterandoDinero = dineroGastado[i];
+
+            dineroAcumulado = iterandoDinero + dineroAcumulado;
+
+        }
+
+        if(dineroAcumulado >= 120){
+
+            int veintePorciento = (20*dineroAcumulado)/100;
+            int dineroPorPagar = dineroAcumulado - veintePorciento;
+
+            System.out.println("Felicidades al gastar mas de S/120 te daremos una oferta de pagar un 20% menos, entonces el dinero a pagar sera: " + dineroPorPagar );
+
+        }else{
+
+            int dineroFaltante = 120 - dineroAcumulado;
+
+            System.out.println("Para la oferta de 20% necesitas gastar: " + dineroFaltante);
+
+        }
+
+
+
+    }
+
+
 
     public static void interfaces(){
 
